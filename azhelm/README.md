@@ -2,6 +2,12 @@
 
 The container provides a base container which can be used to run helm and kubectl on an AKS cluster. 
 
+## Build
+
+```
+docker build -t azhelm .
+```
+
 ## Credentials
 The container runs as `appuser` which is non-root and hence the azure configurations details should be mounted as follows 
 
