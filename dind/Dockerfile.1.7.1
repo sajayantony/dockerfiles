@@ -1,0 +1,17 @@
+FROM ubuntu:bionic
+RUN apt-get update  && apt-get upgrade
+RUN apt-get install -y \
+        iptables aufs-tools\
+        lsb-core tmux
+
+
+# Install Docker binaries
+WORKDIR /root/docker
+ENV PATH="/root/docker/docker:${PATH}"
+RUN curl -O https://download.docker.com/linux/static/stable/x86_64/docker-17.03.0-ce.tgz && \
+    tar xzvf  docker-17.03.0-ce.tgz 
+WORKDIR /root/docker/docker
+
+VOLUME /var/lib/docker
+cmd ["/bin/bash", "-c", "echo Start tmux and in a new window run dockerd\
+ && /bin/bash"]
