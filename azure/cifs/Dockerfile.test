@@ -1,0 +1,4 @@
+ARG REGISTRY 
+FROM ${REGISTRY}/cifs 
+COPY ./test.sh /test.sh
+CMD ["/bin/sh" , "-c",  "/test.sh"]

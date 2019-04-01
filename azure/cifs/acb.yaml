@@ -1,0 +1,7 @@
+steps:
+  - cmd: {{.Run.Registry}}/cifs:test
+    privileged: true
+    env: 
+      - "MOUNT_SHARE={{.Values.MOUNT_SHARE}}"
+      - "MOUNT_POINT={{.Values.MOUNT_POINT}}"
+      - "MOUNT_OPTIONS={{.Values.MOUNT_OPTIONS}}"
