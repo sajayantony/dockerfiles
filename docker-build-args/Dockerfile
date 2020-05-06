@@ -1,3 +1,4 @@
 ARG REGISTRY=myregistry.azurecr.io
-FROM $REGISTRY:latest
+ARG IMAGE=hello-world:latest
+FROM $REGISTRY/$IMAGE
 
