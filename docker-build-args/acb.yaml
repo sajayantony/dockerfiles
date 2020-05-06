@@ -1,4 +1,4 @@
 version: v1.1.0
 steps:
-  - build: -f Dockerfile  --build-arg REGISTRY=$Registry .
-
+  - build: -t $Registry/hello-world:$ID -f Dockerfile  --build-arg REGISTRY=$Registry .
+  - push: ["$Registry/hello-world:$ID"]
